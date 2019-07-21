@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SabaiPadhau.Models.tblCourse>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoginedLayout.cshtml";
+}
+
+
+
+
+    <div class="table">
+
+        <div class="d-inline">
+
+            @foreach (var item in Model)
+            {
+
+                if (item.Keyword == "Science" || item.Keyword == "science")
+                {
+                    <h2>Science</h2>
+                    <div>
+                        <video width="820" height="640" controls>
+                            <source src="~/Videos/@item.VideoPath" type="video/mp4" />
+                        </video><br>
+                        <h2> @Html.DisplayFor(modelItem => item.CourseTopic)</h2>
+                    </div>
+
+
+                }
+
+            }
+
+
+
+
+            }
+    
+        </div>
+    </div>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<SabaiPadhau.Models.tblCertificate>
+
+@{
+    ViewBag.Title = "AdminPanel";
+    Layout = "~/Views/Shared/_LoginedLayout.cshtml";
+}
+
+<h2>AdminPanel</h2>
+
+
+<table class="table">
+  
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+       
+        <img src="~/img/certificate/@item.GovernmentVerifiedImage" height="50%" width="50%">
+    </td>
+    
+    <td>
+        @Html.ActionLink("Confirm", "Confirm", "Login", new {  id=item.UserId}, new { @class = "btn btn-info" })
+        @Html.ActionLink("Cancle", "Cancle", "Login",  new {  id=item.UserId}, new { @class = "btn btn-info" })
+
+    </td>
+</tr>
+}
+
+</table>
